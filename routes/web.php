@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/aboutus', function () {
+    return view('aboutus', ['data' => '11903306']);
+});
+
 // Basic Routing
 Route::get('login', [LoginController::class, 'login_form']);
 Route::get('forgot', [LoginController::class, 'forgot_password']);
