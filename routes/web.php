@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PizzaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::get('/', function () {
 Route::get('/aboutus', function () {
     return view('aboutus', ['data' => '11903306']);
 });
+
+// Named routing
+// Route::get('profile', [LoginController::class, 'profile'])->name('profile');
 
 // Basic Routing
 Route::get('login', [LoginController::class, 'login_form']);
@@ -50,3 +54,11 @@ Route::get('month/{num}', function($num) {
 Route::get('invalid/{msg}', function($msg) {
     return $msg;
 });
+
+
+// Working with MySQL
+Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index');
+Route::get('/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.create');
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
+Route::post('/pizzas', [PizzaController::class, 'store'])->name('pizzas.store');
+Route::delete('/pizzas/{id}', [PizzaController::class, 'delete'])->name('pizzas.delete');

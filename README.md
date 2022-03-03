@@ -62,3 +62,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# Working with MySQL
+```sh
+# Creating database
+create database pizzahouse;
+
+# Creating table migration
+php artisan make:migration create_pizzas_table
+
+# Migrating tables to database
+php aritsan migrate
+
+# Adding new column in existing table
+php artisan make:migration add_price_to_pizzas_table
+
+# Creating Eloquent Models
+php artisan make:model Pizza
+```
