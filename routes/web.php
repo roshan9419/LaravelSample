@@ -4,6 +4,7 @@ use App\Http\Controllers\CookieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PizzaController;
 
 /*
@@ -69,3 +70,8 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'delete'])->name('pizzas.
 Route::get('/cookie/set', [CookieController::class, 'setCookie']);
 Route::get('/cookie/get', [CookieController::class, 'getCookie']);
 Route::get('/cookie/remove', [CookieController::class, 'deleteCookie']);
+
+
+// Mail
+Route::get('/mail', [MailController::class, 'form']);
+Route::post('/mail/send', [MailController::class, 'sendMail']);
