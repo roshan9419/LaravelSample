@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CookieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
@@ -62,3 +63,9 @@ Route::get('/pizzas/create', [PizzaController::class, 'create'])->name('pizzas.c
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
 Route::post('/pizzas', [PizzaController::class, 'store'])->name('pizzas.store');
 Route::delete('/pizzas/{id}', [PizzaController::class, 'delete'])->name('pizzas.delete');
+
+
+// Cookies
+Route::get('/cookie/set', [CookieController::class, 'setCookie']);
+Route::get('/cookie/get', [CookieController::class, 'getCookie']);
+Route::get('/cookie/remove', [CookieController::class, 'deleteCookie']);
