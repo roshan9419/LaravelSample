@@ -4,6 +4,7 @@ use App\Http\Controllers\CookieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PizzaController;
 
@@ -75,3 +76,8 @@ Route::get('/cookie/remove', [CookieController::class, 'deleteCookie']);
 // Mail
 Route::get('/mail', [MailController::class, 'form']);
 Route::post('/mail/send', [MailController::class, 'sendMail']);
+
+// Image Uploader
+Route::get('/my-gallery', [ImageUploadController::class, 'getAllImages'])->name('gallery.list');
+Route::get('/my-gallery/upload', [ImageUploadController::class, 'uploadForm'])->name('gallery.form');
+Route::post('/my-gallery/upload', [ImageUploadController::class, 'uploadImage'])->name('gallery.upload');
