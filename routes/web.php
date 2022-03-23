@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
@@ -76,6 +77,10 @@ Route::get('/cookie/remove', [CookieController::class, 'deleteCookie']);
 // Mail
 Route::get('/mail', [MailController::class, 'form']);
 Route::post('/mail/send', [MailController::class, 'sendMail']);
+
+// Personal Information
+Route::get('/profile', [FormController::class, 'form'])->name('profile.form');
+Route::post('/profile/add', [FormController::class, 'addDetails'])->name('profile.add');
 
 // Image Uploader
 Route::get('/my-gallery', [ImageUploadController::class, 'getAllImages'])->name('gallery.list');
