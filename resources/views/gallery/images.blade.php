@@ -16,8 +16,8 @@
             border: 0;
         }
         img {
-            width: 200px;
-            height: 100px;
+            width: 320px;
+            height: 200px;
             margin: 5px;
         }
     </style>

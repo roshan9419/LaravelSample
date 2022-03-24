@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\TestMailController;
 use App\Http\Controllers\PizzaController;
 
 /*
@@ -21,7 +22,8 @@ use App\Http\Controllers\PizzaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mail.holi-template');
+    // return view('welcome');
 });
 
 Route::get('/aboutus', function () {
@@ -75,8 +77,13 @@ Route::get('/cookie/remove', [CookieController::class, 'deleteCookie']);
 
 
 // Mail
-Route::get('/mail', [MailController::class, 'form']);
-Route::post('/mail/send', [MailController::class, 'sendMail']);
+Route::get('/mail', [TestMailController::class, 'form']);
+Route::post('/mail/send', [TestMailController::class, 'sendMail'])->name('mail.send');
+
+// Mail
+// Route::get('/mail', [MailController::class, 'form']);
+// Route::post('/mail/send', [MailController::class, 'sendMail']);
+
 
 // Personal Information
 Route::get('/profile', [FormController::class, 'form'])->name('profile.form');

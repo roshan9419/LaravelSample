@@ -26,7 +26,7 @@ class FormController extends Controller
             "phoneNumber" => "required",
             "gender" => "required",
             "ageGroup" => "required",
-            "maritialStatus" => "required",
+            "maritalStatus" => "required",
             "state" => "required",
             "city" => "required",
             "pincode" => "required",
@@ -46,7 +46,7 @@ class FormController extends Controller
         $this->showItem("Phone number", $req->phoneCode . " " . $req->phoneNumber);
         $this->showItem("Gender", $req->gender);
         $this->showItem("Age Group", $req->ageGroup);
-        $this->showItem("Maritial Status", $req->maritialStatus);
+        $this->showItem("Marital Status", $req->maritalStatus);
         $this->showItem("Address", join(", ", [$req->city, $req->state, $req->pincode]));
         $this->showItem("About you", $req->about);
         $this->showItem("Working days", join(", ", $req->workDays));

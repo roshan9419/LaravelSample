@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +17,7 @@ class ImageUploadController extends Controller
 
     public function uploadImage(Request $request)
     {
-        // upload image
+        // upload image and store in gallery directory
         $destination_path = 'public/images/gallery/';
         $request->file('image')->store($destination_path);
         return "Image uploaded successfully <a href='/my-gallery'>View Gallery</a>";
@@ -26,6 +25,7 @@ class ImageUploadController extends Controller
 
     public function getAllImages()
     {
+        // getting all the uploaded images from gallery directory
         $photos = array();
         foreach (Storage::files('public/images/gallery/') as $path) {
             $path = Str::replaceFirst('public', 'storage', $path);

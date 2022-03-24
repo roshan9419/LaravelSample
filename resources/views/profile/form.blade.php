@@ -89,8 +89,8 @@
           </select>
         </div>
         <div class="form-group mr-2">
-          <label class="imp b">Maritial Status</label><br>
-          <select name="maritialStatus" required>
+          <label class="imp b">Marital Status</label><br>
+          <select name="maritalStatus" required>
             <option value="{{null}}">Select</option>
             @foreach (['Married', 'Single', 'Prefer not to say'] as $status)
               <option value="{{ $status }}">{{ $status }}</option>
